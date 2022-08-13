@@ -9,7 +9,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-const dburl = 'mongodb://<username>:<password>@cluster0-shard-00-00.7tssm.mongodb.net:27017,cluster0-shard-00-01.7tssm.mongodb.net:27017,cluster0-shard-00-02.7tssm.mongodb.net:27017/taskDB?ssl=true&replicaSet=atlas-i0ht0p-shard-0&authSource=admin&retryWrites=true&w=majority'
+const dburl = 'mongodb://<username>:<password>@<address>'
 mongoose.connect(dburl)
 .then(()=> app.listen(3000))
 .catch((err) => {
