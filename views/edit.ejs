@@ -1,0 +1,27 @@
+<%- include('head.ejs'); %>
+
+    <form action="/edit/<%=task.id%>" method="POST">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" value="<%=task.title%>"><br><br>
+        
+        <label for="description">Description</label>
+        <input id="description" name="description" value="<%=task.description%>"><br><br>
+        
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" value="<%=task.date%>"><br><br>
+
+        <label for="colour">Color</label>
+        <select name="colour" id="colour" >
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+        </select>
+      <br><br>
+
+        <button class="edit-button">Update Task</button>
+    </form><br>
+
+  <a href="/" class="home">return home</a>
+  
+  </body>
+</html>

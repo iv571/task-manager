@@ -1,0 +1,38 @@
+<%- include('head.ejs'); %>
+<a href="/add" class="add">Add a Task +</a>
+
+<div class="nTask">
+  <% if (task.length > 0) { %>
+  <% task.forEach((task) => { %>
+    <% let dateStr = new Date(task.date).toString() %>
+   
+    <div class="taskS">
+      <% if (task.colour == 'green') { %>
+        <div class="task" style="background-color:rgb(138, 255, 191)"><p></p></div>
+        <% } else if (task.colour == 'blue') { %>
+      <div class="task" style="background-color:rgb(77, 169, 255)"><p></p></div>
+      <% } else if (task.colour == 'red') { %>
+      <div class="task" style="background-color:rgb(255, 128, 128)"><p></p></div>
+      <% } else { %>
+        <div class="task" style="background-color:none"><p></p></div>
+      <% } %>
+    <h2><%= task.title %></h2>
+    <p><%= task.description %></p>
+    <p class="date"><%= dateStr.slice(0,11) %></p>
+    
+    <a href="/edit/<%=task._id%>" class="edit">Edit</a>
+  <a href="/delete/<%=task._id%>" class="delete">Delete</a>
+    </div>
+  <% }); %>
+  
+  
+  
+
+  <% } else { %>
+    <p>No tasks</p>
+    <% } %>
+  </div>
+  
+  <%- include('footer.ejs') %>
+  </body>
+</html>
